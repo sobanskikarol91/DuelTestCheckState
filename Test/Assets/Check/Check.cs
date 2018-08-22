@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public abstract class  CheckBase<CardType> where CardType : Slot
+public abstract class CheckBase
 {
-   public abstract Result Check(CardType s);
+   public abstract Result Check(Slot s);
 }
 
-public class CheckResources : CheckBase<Slot>
+public class CheckResources : CheckBase
 {
     public override Result Check(Slot s)
     {
@@ -17,7 +17,7 @@ public class CheckResources : CheckBase<Slot>
     }
 }
 
-public class CheckGold : CheckBase<Slot>
+public class CheckGold : CheckBase
 {
     public override Result Check(Slot s)
     {
@@ -28,10 +28,11 @@ public class CheckGold : CheckBase<Slot>
     }
 }
 
-public class CheckSymbol : CheckBase<SlotCard>
+public class CheckSymbol : CheckBase
 {
-    public override Result Check(SlotCard s)
-    {        
+    public override Result Check(Slot s)
+    {
+        
         // sprawdz czy gracz moze kupic karte za symbol z innej karty
         throw new System.NotImplementedException();
     }

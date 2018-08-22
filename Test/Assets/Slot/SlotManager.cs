@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class SlotManager : MonoBehaviour 
+public class SlotManager : MonoBehaviour
 {
     static List<Slot> _slots;
 
@@ -16,8 +16,8 @@ public class SlotManager : MonoBehaviour
         _slots.Remove(s);
     }
 
-    static void CheckStates()
+    public static void CheckStates()
     {
-        _slots.ForEach(s => CheckManager.CheckSlotResult(s));
+        _slots.ForEach(s => CheckManager.CheckSlotCardResult(s));
     }
 }

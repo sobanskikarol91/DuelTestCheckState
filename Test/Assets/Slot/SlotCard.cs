@@ -1,15 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SlotCard : MonoBehaviour 
+public class SlotCard : Slot 
 {
-    void Start()
-    {
 
-    }
-
-    void Update()
-    {
-
-    }
 }

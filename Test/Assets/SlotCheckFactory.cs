@@ -2,9 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class SlotCheckFactory : MonoBehaviour 
+public class SlotCheckFactory : MonoBehaviour
 {
-    public static List<CheckBase> ChooseCheckListDependsOnSlotType(Slot s)
+    public static List<CheckBase<Slot>> ChooseCheckListDependsOnSlotType(Slot s)
     {
         if (s.GetType() == typeof(Slot))
             return GetWonderCheckList();
@@ -13,17 +13,17 @@ public class SlotCheckFactory : MonoBehaviour
         else return null;
     }
 
-    public static List<CheckBase> GetWonderCheckList()
+    public static List<CheckBase<Slot>> GetWonderCheckList()
     {
-        List<CheckBase> _checkList = new List<CheckBase>();
+        List<CheckBase<Slot>> _checkList = new List<CheckBase<Slot>>();
         _checkList.Add(new CheckResources());
         _checkList.Add(new CheckGold());
         return _checkList;
     }
 
-    public static List<CheckBase> GetCardCheckList()
+    public static List<CheckBase<Slot>> GetCardCheckList()
     {
-        List<CheckBase> _checkList = new List<CheckBase>();
+        List<CheckBase<Slot>> _checkList = new List<CheckBase<Slot>>();
         _checkList.Add(new CheckResources());
         _checkList.Add(new CheckSymbol());
         _checkList.Add(new CheckGold());

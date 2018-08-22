@@ -8,7 +8,7 @@ public class CheckManager : MonoBehaviour
     {
         // Problem 1. w zależności od typu slotu chce aby fabryka zwróciła mi odpowiednie 
         // możliwoście za jakie mogę kupić karte np. za zasoby, pieniadze, symbol
-        List<CheckBase> checkList = SlotCheckFactory.ChooseCheckListDependsOnSlotType(_slot);
+        List<CheckBase<Slot>> checkList = SlotCheckFactory.ChooseCheckListDependsOnSlotType(_slot);
 
         // dla kazdej mozliwosci wykonuje sprawdzenie czy slot spełnia wymagania
         // i zapamietuje ten wynik w slocie
